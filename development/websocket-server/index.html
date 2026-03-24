@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://google-gemini.github.io/genai-processors/rapid-prototyping/cli/">
+        <link rel="canonical" href="https://google-gemini.github.io/genai-processors/development/websocket-server/">
       
       
-        <link rel="prev" href="../../development/websocket-server/">
+        <link rel="prev" href="../caching/">
       
       
-        <link rel="next" href="../ai-studio/">
+        <link rel="next" href="../../rapid-prototyping/cli/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>Command Line - GenAI Processors</title>
+        <title>WebSocket Server - GenAI Processors</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#building-cli-examples" class="md-skip">
+        <a href="#wrapping-a-processor-into-a-websocket-server" class="md-skip">
           Skip to content
         </a>
       
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Command Line
+              WebSocket Server
             
           </span>
         </div>
@@ -525,8 +525,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -549,13 +551,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
@@ -576,7 +576,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             
@@ -594,7 +594,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../development/supported-models/" class="md-nav__link">
+      <a href="../supported-models/" class="md-nav__link">
         
   
   
@@ -622,7 +622,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../development/built-in-processors/" class="md-nav__link">
+      <a href="../built-in-processors/" class="md-nav__link">
         
   
   
@@ -650,7 +650,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../development/tracing/" class="md-nav__link">
+      <a href="../tracing/" class="md-nav__link">
         
   
   
@@ -678,7 +678,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../development/caching/" class="md-nav__link">
+      <a href="../caching/" class="md-nav__link">
         
   
   
@@ -703,103 +703,6 @@
                 
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../../development/websocket-server/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    WebSocket Server
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-    
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
-        
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Rapid Prototyping
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_6">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Rapid Prototyping
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
     
   
   
@@ -819,7 +722,7 @@
   <span class="md-ellipsis">
     
   
-    Command Line
+    WebSocket Server
   
 
     
@@ -837,7 +740,7 @@
   <span class="md-ellipsis">
     
   
-    Command Line
+    WebSocket Server
   
 
     
@@ -863,10 +766,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#the-pipeline-pattern" class="md-nav__link">
+  <a href="#quick-start" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The Pipeline Pattern
+        Quick Start
       
     </span>
   </a>
@@ -874,49 +777,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#core-guidelines" class="md-nav__link">
+  <a href="#communication-protocol" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Core Guidelines
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Core Guidelines">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#standard-inputoutput-utilities" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Standard Input/Output Utilities
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#asynchronous-execution" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Asynchronous Execution
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#template-structure" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Template Structure
+        Communication Protocol
       
     </span>
   </a>
@@ -932,6 +796,75 @@
 
               
             
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rapid Prototyping
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Rapid Prototyping
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
               
                 
   
@@ -939,7 +872,35 @@
   
   
     <li class="md-nav__item">
-      <a href="../ai-studio/" class="md-nav__link">
+      <a href="../../rapid-prototyping/cli/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Command Line
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rapid-prototyping/ai-studio/" class="md-nav__link">
         
   
   
@@ -967,7 +928,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../coding-agent/" class="md-nav__link">
+      <a href="../../rapid-prototyping/coding-agent/" class="md-nav__link">
         
   
   
@@ -1448,10 +1409,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#the-pipeline-pattern" class="md-nav__link">
+  <a href="#quick-start" class="md-nav__link">
     <span class="md-ellipsis">
       
-        The Pipeline Pattern
+        Quick Start
       
     </span>
   </a>
@@ -1459,49 +1420,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#core-guidelines" class="md-nav__link">
+  <a href="#communication-protocol" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Core Guidelines
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Core Guidelines">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#standard-inputoutput-utilities" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Standard Input/Output Utilities
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#asynchronous-execution" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Asynchronous Execution
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#template-structure" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Template Structure
+        Communication Protocol
       
     </span>
   </a>
@@ -1528,70 +1450,133 @@
   
 
 
-<h1 id="building-cli-examples">Building CLI Examples</h1>
-<p>Building a Command Line Interface (CLI) is the fastest way to prototype and test
-your agents. This guide outlines the high-level principles for creating robust
-CLI examples using GenAI Processors.</p>
-<h2 id="the-pipeline-pattern">The Pipeline Pattern</h2>
-<p>The core philosophy of the library is <strong>composition</strong>. Most CLI examples follow
-a simple pipeline pattern:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">agent</span> <span class="o">=</span> <span class="n">input_processor</span> <span class="o">+</span> <span class="n">logic_processor</span> <span class="o">+</span> <span class="n">output_processor</span>
+<h1 id="wrapping-a-processor-into-a-websocket-server">Wrapping a Processor into a WebSocket Server</h1>
+<p>The
+<a href="https://github.com/google-gemini/genai-processors/blob/main/dev/live_server.py"><code>live_server</code></a>
+module provides a simple way to serve a GenAI Processor over a WebSocket
+connection. This allows you to bridge a local agent pipeline to an AI Studio
+Applet or a custom web interface.</p>
+<h2 id="quick-start">Quick Start</h2>
+<p>To initialize the server, define a <code>processor_factory</code> function to creates an
+instance of your processor and pass it to <code>live_server.run_server</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">asyncio</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Any</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kn">from</span><span class="w"> </span><span class="nn">genai_processors</span><span class="w"> </span><span class="kn">import</span> <span class="n">processor</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="kn">from</span><span class="w"> </span><span class="nn">genai_processors.dev</span><span class="w"> </span><span class="kn">import</span> <span class="n">live_server</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="k">def</span><span class="w"> </span><span class="nf">create_my_processor</span><span class="p">(</span><span class="n">config</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">processor</span><span class="o">.</span><span class="n">Processor</span><span class="p">:</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>  <span class="c1"># &#39;config&#39; is sent by the client at start.</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>  <span class="n">my_processor</span> <span class="o">=</span> <span class="o">...</span> <span class="c1"># Your processor initialization</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>  <span class="k">return</span> <span class="n">my_processor</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>  <span class="c1"># Defaults to localhost.</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>  <span class="k">await</span> <span class="n">live_server</span><span class="o">.</span><span class="n">run_server</span><span class="p">(</span><span class="n">create_my_processor</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">8765</span><span class="p">)</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>  <span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
 </code></pre></div>
-<p>By using the <code>+</code> operator, you can chain inputs (mic, camera, terminal) with
-logic (Gemini, STT/TTS) and outputs (speakers, terminal output) into a single
-executable agent.</p>
-<h2 id="core-guidelines">Core Guidelines</h2>
-<p>When building a new CLI example, follow these guidelines:</p>
-<h3 id="standard-inputoutput-utilities">Standard Input/Output Utilities</h3>
-<p>Avoid writing custom loop logic for terminal interaction. Use the optimized
-utilities in <code>genai_processors.core</code>:</p>
+<h2 id="communication-protocol">Communication Protocol</h2>
+<p>The client and server exchange JSON-stringified messages. Each message follows a
+consistent envelope representing a <code>ProcessorPart</code>.</p>
+<p><strong>1. Initialization (Client → Server)</strong></p>
+<p>Before sending data, the client should send a configuration message. This
+dictionary is passed directly to your <code>processor_factory</code> as the <code>config</code>
+argument.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">&quot;mimetype&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;application/x-config&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="nt">&quot;metadata&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="nt">&quot;my_setting&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;my_value&quot;</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="p">}</span>
+</code></pre></div>
+<p><strong>2. Sending Data &amp; Control (Client → Server)</strong></p>
+<p>Input (Text, Audio, Images) is wrapped in a <code>ProcessorPart</code> object. Binary data
+must be Base64-encoded.</p>
 <ul>
-<li><strong>Text</strong>: Use
-    <a href="https://github.com/google-gemini/genai-processors/blob/main/genai_processors/core/text.py"><code>text.terminal_input()</code></a>
-    and <code>text.terminal_output()</code>.</li>
-<li><strong>Audio</strong>: Use
-    <a href="https://github.com/google-gemini/genai-processors/blob/main/genai_processors/core/audio_io.py"><code>audio_io.PyAudioIn()</code></a>
-    and <code>audio_io.PyAudioOut()</code>.</li>
-<li><strong>Video</strong>: Use
-    <a href="https://github.com/google-gemini/genai-processors/blob/main/genai_processors/core/video.py"><code>video.VideoIn(video_mode=...)</code></a>
-    for camera or screen sharing.</li>
+<li>
+<p><strong>Text</strong>: <code>json { "part": { "text": "Hello World" }, "role": "user" }</code></p>
+</li>
+<li>
+<p><strong>Media</strong>:</p>
+</li>
 </ul>
-<h3 id="asynchronous-execution">Asynchronous Execution</h3>
-<p>Processors are designed to be used from async Python, so it is often convenient
-to make the <code>main</code> function async and run the whole program using
-<code>asyncio.run()</code>. For instance, most examples are wrapped in an <code>async def run()</code>
-function and executed via <code>asyncio.run()</code>.</p>
-<h2 id="template-structure">Template Structure</h2>
-<p>A typical CLI example looks like this:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">asyncio</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="kn">from</span><span class="w"> </span><span class="nn">genai_processors.core</span><span class="w"> </span><span class="kn">import</span> <span class="n">genai_model</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="kn">from</span><span class="w"> </span><span class="nn">genai_processors.core</span><span class="w"> </span><span class="kn">import</span> <span class="n">text</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="c1"># Load configuration from environment</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="n">API_KEY</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;GOOGLE_API_KEY&#39;</span><span class="p">]</span>
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">run_agent</span><span class="p">():</span>
-<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>    <span class="n">model</span> <span class="o">=</span> <span class="n">genai_model</span><span class="o">.</span><span class="n">GenaiModel</span><span class="p">(</span>
-<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>        <span class="n">api_key</span><span class="o">=</span><span class="n">API_KEY</span><span class="p">,</span>
-<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>        <span class="n">model_name</span><span class="o">=</span><span class="s1">&#39;gemini-3.0-flash&#39;</span>
-<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>    <span class="p">)</span>
-<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>
-<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>    <span class="c1"># Compose the pipeline (Input + Model + Output)</span>
-<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>    <span class="c1"># text.terminal_output handles the loop and formatting automatically</span>
-<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>    <span class="n">prompt</span> <span class="o">=</span> <span class="s1">&#39;&gt; &#39;</span>
-<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>    <span class="k">await</span> <span class="n">text</span><span class="o">.</span><span class="n">terminal_output</span><span class="p">(</span>
-<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>        <span class="n">model</span><span class="p">(</span><span class="n">text</span><span class="o">.</span><span class="n">terminal_input</span><span class="p">(</span><span class="n">prompt</span><span class="o">=</span><span class="n">prompt</span><span class="p">)),</span>
-<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>        <span class="n">prompt</span><span class="o">=</span><span class="n">prompt</span>
-<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>    <span class="p">)</span>
-<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>
-<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>    <span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">run_agent</span><span class="p">())</span>
+<blockquote>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">{</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w"> </span><span class="nt">&quot;part&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">   </span><span class="nt">&quot;inline_data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">     </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SGVsbG8gV29ybGQ=&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">     </span><span class="nt">&quot;mime_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;audio/l16;rate=24000&quot;</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">   </span><span class="p">}</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w"> </span><span class="p">},</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w"> </span><span class="nt">&quot;role&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;user&quot;</span><span class="p">,</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w"> </span><span class="nt">&quot;substream_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;realtime&quot;</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="p">}</span>
 </code></pre></div>
-<p>See the
-<a href="https://github.com/google-gemini/genai-processors/tree/main/examples"><code>examples/</code></a>
-directory for full implementations of these patterns.</p>
+</blockquote>
+<ul>
+<li>
+<p><strong>Control Signals:</strong> The client can send empty <code>ProcessorPart</code> objects with
+    <code>metadata</code> to manage the session:</p>
+<ul>
+<li>
+<p><code>{"metadata": {"reset": true}}</code>: Resets the processor state on the
+    server.</p>
+</li>
+<li>
+<p><code>{"metadata": {"mic": "off"}}</code>: Notifies the server the client has muted
+    their microphone. This sends a <code>part</code> to the underlying processor on the
+    <code>realtime</code> substream with the metadata entry for <code>audio_stream_end</code> set
+    to <code>True</code>.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>3. Receiving Data &amp; State (Server → Client)</strong></p>
+<p>The server streams responses back using the same structure. Common mimetypes to
+handle include <code>text/plain</code>, <code>audio/*</code>, and the internal <code>application/x-state</code>.</p>
+<p><strong>State Metadata to Monitor:</strong></p>
+<ul>
+<li>
+<p><code>generation_complete: True</code>: The processor has finished generating a
+    response.</p>
+</li>
+<li>
+<p><code>interrupted: True</code>: The processor was interrupted (e.g., by a "start of
+    speech" signal).</p>
+</li>
+<li>
+<p><code>health_check: True</code>: Sent periodically to ensure the connection is alive.</p>
+</li>
+</ul>
+<p><strong>Example Response:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">{</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="nt">&quot;part&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;text&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Hello! How can I help?&quot;</span><span class="w"> </span><span class="p">},</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span><span class="nt">&quot;role&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;model&quot;</span><span class="p">,</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">  </span><span class="nt">&quot;mimetype&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;text/plain&quot;</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="p">}</span>
+</code></pre></div>
+<p><strong>Implementation Examples (TypeScript):</strong></p>
+<p>A typical way to handle these messages in your Applet frontend:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">this</span><span class="p">.</span><span class="nx">agentWebSocket</span><span class="p">.</span><span class="nx">onmessage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">event</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">msg</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">mimetype</span><span class="p">,</span><span class="w"> </span><span class="nx">part</span><span class="p">,</span><span class="w"> </span><span class="nx">metadata</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">msg</span><span class="p">;</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">mimetype</span><span class="o">?</span><span class="p">.</span><span class="nx">startsWith</span><span class="p">(</span><span class="s1">&#39;audio/&#39;</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">        </span><span class="c1">// Decode Base64 and play</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="nx">playBuffer</span><span class="p">(</span><span class="nx">base64</span><span class="p">.</span><span class="nx">decode</span><span class="p">(</span><span class="nx">part</span><span class="p">.</span><span class="nx">inline_data</span><span class="p">.</span><span class="nx">data</span><span class="p">));</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">    </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">mimetype</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;application/x-state&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">metadata</span><span class="p">.</span><span class="nx">generation_complete</span><span class="p">)</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;Done!&quot;</span><span class="p">);</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="p">};</span>
+</code></pre></div>
+<p>You can see real examples of client apps using the websocket server here:</p>
+<ul>
+<li><a href="https://github.com/google-gemini/genai-processors/blob/main/examples/live_commentator/ais_app/index.tsx">Live Commentator UI</a></li>
+<li><a href="https://github.com/google-gemini/genai-processors/blob/main/examples/live_illustrator/ais_app/index.tsx">Live Ilustrator UI</a></li>
+<li><a href="https://github.com/google-gemini/genai-processors/blob/main/examples/widgets/ais_app/index.tsx">Widgets Agent UI</a></li>
+</ul>
 
 
 
@@ -1627,7 +1612,7 @@ directory for full implementations of these patterns.</p>
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../../development/websocket-server/" class="md-footer__link md-footer__link--prev" aria-label="Previous: WebSocket Server">
+          <a href="../caching/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Caching">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1637,20 +1622,20 @@ directory for full implementations of these patterns.</p>
                 Previous
               </span>
               <div class="md-ellipsis">
-                WebSocket Server
+                Caching
               </div>
             </div>
           </a>
         
         
           
-          <a href="../ai-studio/" class="md-footer__link md-footer__link--next" aria-label="Next: AI Studio">
+          <a href="../../rapid-prototyping/cli/" class="md-footer__link md-footer__link--next" aria-label="Next: Command Line">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                AI Studio
+                Command Line
               </div>
             </div>
             <div class="md-footer__button md-icon">
